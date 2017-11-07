@@ -24,8 +24,11 @@ for year in elections:
     df = pd.read_csv(filename, index_col = 0, thousands = ",", skiprows = [1])
     df.rename(inplace = True, columns = d) # rename to democrat/republican
     df.dropna(inplace = True, axis = 1)    # drop empty columns
+
+    #setting it up as a datetime format to faciliate x-axis labelling later
     df["Year"] = pd.to_datetime(year)
     df["Year"] = df["Year"].dt.year
+
     #extracting the contents required in the homework.
     df = df[["Democratic", "Republican", "Total Votes Cast", "Year"]].reset_index()
     df_combined.append(df)
