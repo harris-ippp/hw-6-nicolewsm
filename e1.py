@@ -17,4 +17,5 @@ with open("ELECTION_ID.txt", "w") as output:
         fullid = tag.get('id')
         idonly = fullid.split('-')[2]
         x += 1
+        #setting up the data in the exact format Dr Saxon required.
         output.write(year + " " + idonly + '\n')

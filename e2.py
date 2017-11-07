@@ -3,6 +3,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
 
+#extracting the information from e1.py as a dictionary
 elections = {}
 for line in open("ELECTION_ID.txt"):
     line = line.strip().split(" ")
